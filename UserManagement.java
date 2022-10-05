@@ -211,3 +211,36 @@ public class UserManagement {
 				list.add(user);
 			}
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return list;
+	}
+	
+	public void addLoginDetails(String email,String role,String ip) {
+		try {
+			String query="update login_details set time=now(),ip=? where email=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			st.setString(1, ip);
+			st.setString(2, email);
+			
+			int result=st.executeUpdate();
+			
+			if(result>0) {
+				//System.out.println("Done....");
+			}
+			else {
+				query="insert into login_details values(?,?,now(),?);";
+				st=con.prepareStatement(query);
+				st.setString(1, email);
+				st.setString(2, role);
+				st.setString(3, ip);
+				
+				result=st.executeUpdate();
+				if(result>0) {
+					//System.out.println("Done....");
+				}
+			}
+		}
