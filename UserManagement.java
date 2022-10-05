@@ -55,3 +55,43 @@ public class UserManagement {
 			
 			
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		System.out.println(result);
+		return result;
+	}
+	
+	
+	public int checkUser(User user) {
+		int result=0;
+		try {
+			String query="select * from user where email=? and password=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			st.setString(1, user.getEmail());
+			st.setString(2,user.getPassword());
+			
+			ResultSet rs=st.executeQuery();
+			if(rs.next()) {
+				String status=rs.getString("status");
+				String role=rs.getString("role");
+				
+				if(status.equals("Activated")) {
+					if(role.equals("Level 1")) {
+						result=1;
+					}
+					else if(role.equals("Level 2")) {
+						System.out.println(role);
+						result=2;
+					}
+					else if(role.equals("User")) {
+						result=3;
+					}
+					else if(role.equals("Admin")) {
+						result=4;
+					}
+					
+				}
+				
+			}
+		}
