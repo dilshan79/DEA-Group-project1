@@ -95,3 +95,35 @@ public class UserManagement {
 				
 			}
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return result;
+	}
+	
+	public List<StaffMember> getStaffMembers(){
+		List<StaffMember> list=new ArrayList<StaffMember>();
+		try {
+			String query="select * from user where role=? or role=? order by id desc";
+			PreparedStatement st=con.prepareStatement(query);
+			st.setString(1, "Level 1");
+			st.setString(2, "Level 2");
+			
+			ResultSet rs=st.executeQuery();
+			
+			while(rs.next()) {
+				StaffMember sm=new StaffMember();
+				
+				sm.setId(rs.getInt("id"));
+				sm.setName(rs.getString("name"));
+				sm.setEmail(rs.getString("email"));
+				sm.setAcc_status(rs.getString("status"));
+				sm.setAddress(rs.getString("address"));
+				sm.setDob(rs.getString("dob"));
+				sm.setPassword(rs.getString("password"));
+				sm.setRole(rs.getString("role"));
+				
+				list.add(sm);
+			}
+		}
