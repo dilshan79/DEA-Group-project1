@@ -57,7 +57,17 @@
 		          <hr class="my-0" />
 		          <div class="card-body pb-0">
 		            <div class="d-flex justify-content-between">
+		              <p><%=flights.get(i).getDepartLocation() %></a></p>
+		              <p class="text-dark"><%=flights.get(i).getArrivalLocation() %></p>
 		            </div>
+		            <div class="d-flex justify-content-between">
+		              <p><%=flights.get(i).getDepartTime() %></a></p>
+		              <p class="text-dark"><%=flights.get(i).getArrivalTime() %></p>
+		            </div>
+		            <p class="small text-muted">Rs: <%=flights.get(i).getTicketPrice() %></p>
+		            <p class="small text-muted">Number Of Seats : <%=flights.get(i).getNumberOfSeats() %></p>
+		            
+		          </div>
 		          <hr class="my-0" />
 		          <div class="card-body">
 		            <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
