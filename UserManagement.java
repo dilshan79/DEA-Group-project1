@@ -31,3 +31,27 @@ public class UserManagement {
 			
 			
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		System.out.println(result);
+		return result;
+	}
+	
+	public int addNewUser(User user) {
+		int result=0;
+		try {
+			String query="insert into user(name,email,password,dob,address,role) values(?,?,?,?,?,?)";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setString(1, user.getName());
+			st.setString(2, user.getEmail());
+			st.setString(3, user.getPassword());
+			st.setString(4, user.getDob());
+			st.setString(5, user.getAddress());
+			st.setString(6, user.getRole());
+			
+			result=st.executeUpdate();
+			
+			
+		}
