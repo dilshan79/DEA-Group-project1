@@ -287,3 +287,32 @@ public class UserManagement {
 		}
 		return result;
 	}
+	public User viewProfile(User user) {
+		try {
+			String query="select * from user where email=?";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setString(1, user.getEmail());
+			
+			ResultSet rs=st.executeQuery();
+			
+			if(rs.next()) {
+				user.setId(rs.getInt("id"));
+				user.setName(rs.getString("name"));
+				user.setEmail(rs.getString("email"));
+				user.setAddress(rs.getString("address"));
+				user.setDob(rs.getString("dob"));
+				user.setPassword(rs.getString("password"));
+				user.setRole(rs.getString("role"));
+				user.setAcc_status(rs.getString("status"));
+			}
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return user;
+	}
+	
+}
