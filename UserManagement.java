@@ -169,3 +169,20 @@ public class UserManagement {
 		
 		return result;
 	}
+	public int removeStaffMember(StaffMember sm) {
+		int result=0;
+		try {
+			String query="update user set status=? where id=?";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setString(1, "Removed");
+			st.setInt(2, sm.getId());
+			
+			result=st.executeUpdate();
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return result;
+	}
