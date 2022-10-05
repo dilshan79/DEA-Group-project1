@@ -244,3 +244,23 @@ public class UserManagement {
 				}
 			}
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
+	
+	public ResultSet getLoginDetails() {
+		ResultSet rs=null;
+		try {
+			String query="select * from login_details order by time desc;";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			rs=st.executeQuery();
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return rs;
+	}
