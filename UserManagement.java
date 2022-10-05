@@ -264,3 +264,26 @@ public class UserManagement {
 		
 		return rs;
 	}
+	public int updateProfile(User user) {
+		int result=0;
+		try {
+			String query="update user set name=?,email=?,password=?,dob=?,address=?,role=? where id=?";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setString(1, user.getName());
+			st.setString(2, user.getEmail());
+			st.setString(3, user.getPassword());
+			st.setString(4, user.getDob());
+			st.setString(5, user.getAddress());
+			st.setString(6, user.getRole());
+			st.setInt(7, user.getId());
+			System.out.println(user.getId());
+			result=st.executeUpdate();
+			
+			
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		return result;
+	}
