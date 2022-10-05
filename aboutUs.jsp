@@ -5,7 +5,8 @@
 --%>
 
         
-       <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+       <%@ page language="java" contentType="text/html; 
+                charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -23,12 +24,9 @@
 		<%@include file="user_header.jsp" %>
 		<%} %>
 		
-		<div class="container" style="width: 100%; height:650px"></div>
+		<div class="container" style="width: 100%; height:650px"></
+                    div>
 		<%@include file="footer.jsp" %>
  
-        
-        
-        
-   
-    </body>
+  </body>
 </html>  
