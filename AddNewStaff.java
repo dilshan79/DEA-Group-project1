@@ -44,6 +44,19 @@ public class AddNewStaff extends HttpServlet {
 			if(role.equals("1")) {
 				StaffMember stm=new Level_One(name,dob,email,address,password,"Level 1");
 				result=um.addNewStaffMember(stm);
+			}
+			else if(role.equals("2")) {
+				StaffMember stm=new Level_Two(name,dob,email,address,password,"Level 2");
+				result=um.addNewStaffMember(stm);
+			}
 			
+			if(result>0) {
+				response.sendRedirect("admin_dashboard.jsp");
+			}
+			else {
+				response.sendRedirect("add_new_Staff_member.jsp");
+			}
+		}
+	}
 
 }
