@@ -127,3 +127,28 @@ public class UserManagement {
 				list.add(sm);
 			}
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return list;
+	}
+	
+	public int activateStaffMember(StaffMember sm) {
+		int result=0;
+		try {
+			String query="update user set status=? where id=?";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setString(1, "Activated");
+			st.setInt(2, sm.getId());
+			
+			result=st.executeUpdate();
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return result;
+	}
