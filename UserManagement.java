@@ -186,3 +186,28 @@ public class UserManagement {
 		
 		return result;
 	}
+	public List<User> getUsers(){
+		List<User> list=new ArrayList<User>();
+		try {
+			String query="select * from user where role=? order by id desc";
+			PreparedStatement st=con.prepareStatement(query);
+			st.setString(1, "User");
+			
+			
+			ResultSet rs=st.executeQuery();
+			
+			while(rs.next()) {
+				User user=new User();
+				
+				user.setId(rs.getInt("id"));
+				user.setName(rs.getString("name"));
+				user.setEmail(rs.getString("email"));
+				user.setAddress(rs.getString("address"));
+				user.setDob(rs.getString("dob"));
+				user.setPassword(rs.getString("password"));
+				user.setRole(rs.getString("role"));
+				user.setAcc_status(rs.getString("status"));
+				
+				list.add(user);
+			}
+		}
