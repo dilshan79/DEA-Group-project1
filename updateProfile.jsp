@@ -33,8 +33,30 @@
 											%>
                                                     <div class="col-md-3 border-right">
                                                         <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                                            <span
-                                                                class="text-black-50">
+                                                            <span class="text-black-50">
                                                                 <%=user.getEmail() %>
                                                                     </span><span> </span></div>
                                                     </div>
+                                                    <div class="col-md-5 border-right">
+                                                        <div class="p-3 py-5">
+                                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                                <h4 class="text-right">Profile Settings</h4>
+                                                            </div>
+                                                            <form action="UpdateProfile" method="post">
+                                                                <div class="row mt-3">
+                                                                    <div class="col-md-12"><label class="labels">Name</label><input class="form-control" type="text" name="name" value="<%=user.getName() %>"></div>
+                                                                    <div class="col-md-12"><label class="labels">Email1</label><input class="form-control" type="email" name="email" value="<%=user.getEmail() %>"></div>
+                                                                    <div class="col-md-12"><label class="labels">Password</label><input class="form-control" type="text" name="password" value="<%=user.getPassword() %>"></div>
+                                                                    <div class="col-md-12"><label class="labels">Address</label><input class="form-control" name="address" value="<%=user.getAddress() %>"></div>
+                                                                    <div class="col-md-12"><label class="labels">Date Of Birth</label><input class="form-control" type="date" name="dob" value="<%=user.getDob() %>"></div>
+                                                                    <div class="col-md-12"><label class="labels">Role</label>
+                                                                        <select class="form-control" name="role">
+																		<%if(role.equals("User")){ %>
+																		<option value="User">User</option>
+																		<%} else if(role.equals("User")){ %>
+																		<option value="Level 1">Staff Level 1</option>
+																		<%}else{ %>
+																		<option value="Level 2">Staff Level 2</option>
+																		<%} %>
+																	</select>
+                                                                    </div>
