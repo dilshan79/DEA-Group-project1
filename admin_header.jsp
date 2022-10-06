@@ -12,10 +12,7 @@
 		    <ul class="navbar-nav">
 		      <li class="nav-item">
 			        	<a class="nav-link" href="admin_dashboard.jsp">Home</a>
-			      </li>
-			 	 	<li class="nav-item" >
-			        	<a class="nav-link" href="logout.jsp">Log Out</a>
-			      	</li>
+			     
 		    	
 		    </ul>
 	  </div>
