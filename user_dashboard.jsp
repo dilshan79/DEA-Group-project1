@@ -70,3 +70,52 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        <hr class="my-0" />
+                                                                        <div class="card-body pb-0">
+                                                                            <div class="d-flex justify-content-between">
+                                                                                <p>
+                                                                                    <%=flight.getDepartLocation() %>
+                                                                                        </a>
+                                                                                </p>
+                                                                                <p class="text-dark">
+                                                                                    <%=flight.getArrivalLocation() %>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="d-flex justify-content-between">
+                                                                                <p>
+                                                                                    <%=flight.getDepartTime() %>
+                                                                                        </a>
+                                                                                </p>
+                                                                                <p class="text-dark">
+                                                                                    <%=flight.getArrivalTime() %>
+                                                                                </p>
+                                                                            </div>
+                                                                            <p class="small text-muted">Rs:
+                                                                                <%=flight.getTicketPrice() %>
+                                                                            </p>
+                                                                            <p class="small text-muted">Number Of Seats :
+                                                                                <%=flight.getNumberOfSeats() %>
+                                                                            </p>
+
+                                                                        </div>
+                                                                        <hr class="my-0" />
+                                                                        <p>Booking Details</p>
+                                                                        <div class="card-body pb-0">
+                                                                            <div class="d-flex justify-content-between">
+                                                                                <p>Ticket Id</a>
+                                                                                </p>
+                                                                                <p class="text-dark">
+                                                                                    <%=tickets.get(i).getId() %>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="d-flex justify-content-between">
+                                                                                <p>Booked Seat Count : </a>
+                                                                                </p>
+                                                                                <p class="text-dark">
+                                                                                    <%=tickets.get(i).getNumberOfSeats() %>
+                                                                                </p>
+                                                                            </div>
+                                                                            <p class="small text-muted">Payment Status :
+                                                                                <%=tickets.get(i).getPaymentStatus() %>
+                                                                            </p>
+                                                                        </div>
