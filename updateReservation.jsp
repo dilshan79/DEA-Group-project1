@@ -100,3 +100,29 @@
                                                                         </p>
 
                                                                     </div>
+                                                                    <hr class="my-0" />
+                                                                    <p>Booking Details</p>
+                                                                    <div class="card-body pb-0">
+                                                                        <div class="d-flex justify-content-between">
+                                                                            <p>Ticket Id</a>
+                                                                            </p>
+                                                                            <p class="text-dark">
+                                                                                <%=ticket.getId() %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="d-flex justify-content-between">
+                                                                            <p>Booked Seat Count : </a>
+                                                                            </p>
+                                                                            <p class="text-dark">
+                                                                                <%=ticket.getNumberOfSeats() %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <p class="small text-muted">Payment Status :
+                                                                            <%=ticket.getPaymentStatus() %>
+                                                                        </p>
+                                                                    </div>
+
+                                                                    <hr class="my-0" />
+                                                                    <div class="card-body">
+                                                                        <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+                                                                            <form action="UpdateTicket" method="post" style="width: 23rem;">
