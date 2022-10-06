@@ -46,3 +46,57 @@
 												
 												
 											%>
+                                                        <div class="row justify-content-center p-3">
+
+
+                                                            <div class="col-md-8 col-lg-6 col-xl-4">
+
+                                                                <div class="card" style="border-radius: 15px;">
+                                                                    <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+                                                                        <img src="images/flight.jpg" style="border-top-left-radius: 15px; border-top-right-radius: 15px;" class="img-fluid" alt="Laptop" />
+                                                                        <a href="#!">
+                                                                            <div class="mask"></div>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="card-body pb-0">
+                                                                        <div class="d-flex justify-content-between">
+                                                                            <div>
+                                                                                <p>
+                                                                                    <a href="#!" class="text-dark">
+                                                                                        <%=flight.getFlightNumber() %>
+                                                                                    </a>
+                                                                                </p>
+                                                                                <p class="small text-muted">
+                                                                                    <%=flight.getDate() %>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="my-0" />
+                                                                    <div class="card-body pb-0">
+                                                                        <div class="d-flex justify-content-between">
+                                                                            <p>
+                                                                                <%=flight.getDepartLocation() %>
+                                                                                    </a>
+                                                                            </p>
+                                                                            <p class="text-dark">
+                                                                                <%=flight.getArrivalLocation() %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="d-flex justify-content-between">
+                                                                            <p>
+                                                                                <%=flight.getDepartTime() %>
+                                                                                    </a>
+                                                                            </p>
+                                                                            <p class="text-dark">
+                                                                                <%=flight.getArrivalTime() %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <p class="small text-muted">Rs:
+                                                                            <%=flight.getTicketPrice() %>
+                                                                        </p>
+                                                                        <p class="small text-muted">Number Of Seats :
+                                                                            <%=flight.getNumberOfSeats() %>
+                                                                        </p>
+
+                                                                    </div>
