@@ -34,8 +34,7 @@
 			%>
                                                     <div class="col-md-3 border-right">
                                                         <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                                            <span
-                                                                class="text-black-50">
+                                                            <span class="text-black-50">
                                                                 <%=user.getEmail() %>
                                                                     </span><span> </span></div>
                                                     </div>
