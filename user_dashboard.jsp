@@ -119,3 +119,23 @@
                                                                                 <%=tickets.get(i).getPaymentStatus() %>
                                                                             </p>
                                                                         </div>
+                                                                        <hr class="my-0" />
+                                                                        <div class="card-body">
+                                                                            <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+
+                                                                                <a href="updateReservation.jsp?id=<%=tickets.get(i).getId() %>"><button type="button" class="btn btn-primary">Update Details</button></a>
+                                                                                <a href="deleteReservation.jsp?id=<%=tickets.get(i).getId() %>"><button type="button" class="btn btn-primary">Delete Details</button></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% if(i%3==0 && i!=0){ %>
+                                                        </div>
+                                                        <%}i++;} %>
+                                            </div>
+                                        </section>
+
+                                        <%@include file="footer.jsp" %>
+                            </body>
+
+                            </html>
