@@ -130,3 +130,21 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="card-body">
+                                                                    <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+
+                                                                        <a href="updateProfile.jsp?id=<%=user.getId() %>"><button type="button" class="btn btn-primary">Update Profile</button></a>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <%} %>
+                                            </div>
+                                        </section>
+
+                                        <%@include file="footer.jsp" %>
+            </body>
+
+            </html>
