@@ -130,5 +130,41 @@
 		 <hr class="m-5">
 		</section>
 		
+		<section style="background-color: #eee;opacity: 0.85">
+		  <div class="container py-5">
+		  	
+	          <h2>Login Details</h2>
+		  	<table class="table">
+		  	  
+			  <thead class="thead-dark">
+			    <tr>
+					<th scope="col">Email</th>
+					<th scope="col">Role</th>
+					<th scope="col">Time</th>
+					<th scope="col">Ip</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<%
+				
+				  	
+				%>
+			    <tr>
+
+					<td scope="row"><%=rs.getString("email") %></td>
+					<td scope="row"><%=rs.getString("role") %></td>
+					<td scope="row"><%=rs.getString("time") %></td>
+					<td scope="row"><%=rs.getString("ip") %></td>
+				</tr>
+				<%i++;} %>
+			   
+			    
+			  </tbody>
+			</table>
+		  </div>
+		 <hr class="m-5">
+		</section>
+		
+		<%@include file="footer.jsp" %>
 	</body>
 </html>
