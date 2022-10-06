@@ -107,3 +107,26 @@
                                                                             </div>
                                                                         </div>
                                                                         <hr>
+                                                                        <div class="row">
+                                                                            <div class="col-sm-3">
+                                                                                <p class="mb-0">Role</p>
+                                                                            </div>
+                                                                            <div class="col-sm-9">
+                                                                                <p class="text-muted mb-0">
+                                                                                    <%=user.getRole() %>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr>
+                                                                        <div class="row">
+                                                                            <div class="col-sm-3">
+                                                                                <p class="mb-0">Account Status</p>
+                                                                            </div>
+                                                                            <div class="col-sm-9">
+                                                                                <p class="text-muted mb-0">
+                                                                                    <%=user.getAcc_status() %>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
