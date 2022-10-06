@@ -60,3 +60,19 @@
 																		<%} %>
 																	</select>
                                                                     </div>
+                                                                    <input type="number" name="id" value="<%=user.getId() %>" hidden>
+
+                                                                </div>
+
+                                                                <div class="mt-5 text-center"><input class="btn btn-primary profile-button" type="submit" name="update" value="Save Profile"></div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <%} %>
+                                            </div>
+                                        </div>
+
+                                        <%@include file="footer.jsp" %>
+            </body>
+
+            </html>
