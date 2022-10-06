@@ -19,24 +19,29 @@
                             <%}else{ %>
                                 <%@include file="staff_header.jsp" %>
                                     <%} %>
+
                                         <div class="container rounded bg-white mt-5 mb-5" style="opacity: 0.9">
                                             <div class="row">
                                                 <%
-												User user=new User();
-												user.setEmail((String)session.getAttribute("email"));
-												
-												UserManagement um=new UserManagement();
-												
-												user=um.viewProfile(user);
-												
-												if(user!=null){
-											%>
+				User user=new User();
+				user.setEmail((String)session.getAttribute("email"));
+				
+				UserManagement um=new UserManagement();
+				
+				user=um.viewProfile(user);
+				
+				if(user!=null){
+			%>
                                                     <div class="col-md-3 border-right">
                                                         <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                                            <span class="text-black-50">
+                                                            <span
+                                                                class="text-black-50">
                                                                 <%=user.getEmail() %>
                                                                     </span><span> </span></div>
                                                     </div>
+
+
+
                                                     <div class="col-md-5 border-right">
                                                         <div class="p-3 py-5">
                                                             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -51,15 +56,16 @@
                                                                     <div class="col-md-12"><label class="labels">Date Of Birth</label><input class="form-control" type="date" name="dob" value="<%=user.getDob() %>"></div>
                                                                     <div class="col-md-12"><label class="labels">Role</label>
                                                                         <select class="form-control" name="role">
-																		<%if(role.equals("User")){ %>
-																		<option value="User">User</option>
-																		<%} else if(role.equals("User")){ %>
-																		<option value="Level 1">Staff Level 1</option>
-																		<%}else{ %>
-																		<option value="Level 2">Staff Level 2</option>
-																		<%} %>
-																	</select>
+	                    		<%if(role.equals("User")){ %>
+								<option value="User">User</option>
+								<%} else if(role.equals("User")){ %>
+								<option value="Level 1">Staff Level 1</option>
+								<%}else{ %>
+								<option value="Level 2">Staff Level 2</option>
+								<%} %>
+							</select>
                                                                     </div>
+
                                                                     <input type="number" name="id" value="<%=user.getId() %>" hidden>
 
                                                                 </div>
