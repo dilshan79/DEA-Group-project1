@@ -126,3 +126,31 @@
                                                                     <div class="card-body">
                                                                         <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
                                                                             <form action="UpdateTicket" method="post" style="width: 23rem;">
+                                                                                <div class="form-outline mb-4">
+                                                                                    <label class="form-label" for="form2Example18">Number Of Seats</label>
+                                                                                    <input type="number" id="form2Example18" class="form-control form-control-lg" name="numberOfSeats" value="<%=ticket.getNumberOfSeats() %>" />
+
+                                                                                    <input type="text" name="email" value="<%=session.getAttribute(" email ")%>" hidden>
+                                                                                    <input type="text" name="id" value="<%=flight.getId() %>" hidden>
+                                                                                    <input type="text" name="tid" value="<%=ticket.getId() %>" hidden>
+                                                                                </div>
+                                                                                <div class="pt-1 mb-4">
+                                                                                    <input class="btn btn-info btn-lg btn-block" type="submit" name="updateTicket" value="Update Ticket">
+
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <%} %>
+                                                </div>
+                                            </section>
+
+                                            <%@include file="footer.jsp" %>
+
+                                </body>
+
+                                </html>
