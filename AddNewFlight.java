@@ -38,5 +38,13 @@ public class AddNewFlight extends HttpServlet {
 			if(result>0) {
 				response.sendRedirect("staff_dashboard.jsp");
 				
-			}		
+			}
+				else {
+				response.sendRedirect("add_new_flight.jsp");
+			}
+		}
+	}
+
 }
+	
+
