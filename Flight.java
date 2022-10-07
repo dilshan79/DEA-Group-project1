@@ -10,15 +10,13 @@ public class Flight {
 	public String getFlightNumber() {
 		return flightNumber;
 	}
-	public void setFlightNumber(String flightNumber) {
-		this.flightNumber = flightNumber;
-}
-public String getDepartTime() {
+	public String getDepartTime() {
 		return departTime;
 	}
 	public void setDepartTime(String departTime) {
 		this.departTime = departTime;
-	}public String getArrivalTime() {
+	}
+	public String getArrivalTime() {
 		return arrivalTime;
 	}
 	public void setArrivalTime(String arrivalTime) {
@@ -32,4 +30,22 @@ public String getDepartTime() {
 	}
 	public double getTicketPrice() {
 		return ticketPrice;
+	}
+	public void setTicketPrice(double ticketPrice) {
+		this.ticketPrice = ticketPrice;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getDepartLocation() {
+		return departLocation;
+	}
+	public void setDepartLocation(String departLocation) {
+		this.departLocation = departLocation;
+	}
+	public String getArrivalLocation() {
+		return arrivalLocation;
 	}
