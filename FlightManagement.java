@@ -98,3 +98,27 @@ public class FlightManagement {
 		
 		return flight;
 	}
+	public int updateFlight(Flight flight) {
+		int result=0;
+		try {
+			String query="update flight set flightNumber=?,departTime=?,arrivalTime=?,numberOfSeats=?,ticketPrice=?,date=?,departLocation=?,arrivalLocation=? where flightId=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setString(1, flight.getFlightNumber());
+			st.setString(2, flight.getDepartTime());
+			st.setString(3, flight.getArrivalTime());
+			st.setInt(4, flight.getNumberOfSeats());
+			st.setDouble(5, flight.getTicketPrice());
+			st.setString(6, flight.getDate());
+			st.setString(7, flight.getDepartLocation());
+			st.setString(8, flight.getArrivalLocation());
+			st.setInt(9, flight.getId());
+			
+			result=st.executeUpdate();
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return result;
+	}
