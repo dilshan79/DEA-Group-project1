@@ -25,3 +25,36 @@ public class TicketManagement {
 	
 			result=st.executeUpdate();
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return result;
+	}
+	
+	public List<Ticket> getTickets(Ticket t){
+		List<Ticket> tickets=new ArrayList<Ticket>();
+		
+		try {
+			String query="select * from ticket_booking where email=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			
+			st.setString(1, t.getEmail());
+			
+	
+			ResultSet rs=st.executeQuery();
+			
+			while(rs.next()) {
+				Ticket ticket=new Ticket();
+				ticket.setEmail(rs.getString("email"));
+				ticket.setFlightId(rs.getInt("flightId"));
+				ticket.setId(rs.getInt("id"));
+				ticket.setNumberOfSeats(rs.getInt("numberOfSeats"));
+				ticket.setPaymentStatus(rs.getString("paymentStatus"));
+				
+				tickets.add(ticket);
+				
+			}
+		}
