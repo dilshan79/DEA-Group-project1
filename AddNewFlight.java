@@ -31,5 +31,12 @@ public class AddNewFlight extends HttpServlet {
 		
 		Flight flight=new Flight();
 		Level_Two lv2=new Level_Two();
+	String role=request.getParameter("role");
 			
+			int result=lv2.addNewFlightDetails(flight);
+			
+			if(result>0) {
+				response.sendRedirect("staff_dashboard.jsp");
+				
+			}		
 }
