@@ -122,3 +122,20 @@ public class FlightManagement {
 		
 		return result;
 	}
+	public int deleteFlight(Flight flight) {
+		int result=0;
+		try {
+			String query="delete from flight where flightId=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setInt(1, flight.getId());
+			
+			result=st.executeUpdate();
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return result;
+	}
+}
