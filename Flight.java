@@ -19,3 +19,15 @@ public class Flight {
 	public String getArrivalTime() {
 		return arrivalTime;
 	}
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+	public int getNumberOfSeats() {
+		return numberOfSeats;
+	}
+	public void setNumberOfSeats(int numberOfSeats) {
+		this.numberOfSeats = numberOfSeats;
+	}
+	public double getTicketPrice() {
+		return ticketPrice;
+	}
