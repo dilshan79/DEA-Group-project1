@@ -36,3 +36,47 @@ public class Login extends HttpServlet {
 			user.setEmail(email);
 			user.setPassword(password);
 			result=um.checkUser(user);
+			String ip=request.getRemoteAddr();
+			
+			HttpSession session=request.getSession();
+			session.setAttribute("email", email);
+			if(result==1) {
+				session.setAttribute("role", "Level 1");
+				
+				um.addLoginDetails(email, "Level 1", ip);
+				
+				response.sendRedirect("staff_dashboard.jsp");
+				
+				
+			}
+			else if(result==2) {
+				session.setAttribute("role", "Level 2");
+				
+				um.addLoginDetails(email, "Level 2", ip);
+				
+				response.sendRedirect("staff_dashboard.jsp");
+				
+			}
+			else if(result==3) {
+				session.setAttribute("role", "User");
+				
+				um.addLoginDetails(email, "User", ip);
+				
+				response.sendRedirect("user_dashboard.jsp");
+				
+			}
+			else if(result==4) {
+				session.setAttribute("role", "Admin");
+				
+				um.addLoginDetails(email, "Admin", ip);
+				
+				response.sendRedirect("admin_dashboard.jsp");
+				
+			}
+			else {
+				response.sendRedirect("login.jsp");
+			}
+		}
+	}
+
+}
