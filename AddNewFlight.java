@@ -22,5 +22,14 @@ public class AddNewFlight extends HttpServlet {
         
     }
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+
 	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Flight flight=new Flight();
+		Level_Two lv2=new Level_Two();
+			
 }
