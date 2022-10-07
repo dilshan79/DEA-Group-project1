@@ -49,3 +49,16 @@ public class Flight {
 	public String getArrivalLocation() {
 		return arrivalLocation;
 	}
+	public void setArrivalLocation(String arrivalLocation) {
+		this.arrivalLocation = arrivalLocation;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+	
+}
