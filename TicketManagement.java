@@ -86,3 +86,29 @@ public class TicketManagement {
 				
 			}
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return ticket;
+	}
+	
+	public int updateTicket(Ticket ticket) {
+		int result=0;
+		try {
+			String query="update ticket_booking set numberOfSeats=?,email=?,flightId=? where id=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setInt(1, ticket.getNumberOfSeats());
+			st.setString(2, ticket.getEmail());
+			st.setInt(3, ticket.getFlightId());
+			st.setInt(4, ticket.getId());
+	
+			result=st.executeUpdate();
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return result;
+	}
