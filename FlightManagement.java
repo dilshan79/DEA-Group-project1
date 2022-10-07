@@ -36,3 +36,35 @@ public class FlightManagement {
 				flights.add(f);
 			}
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return flights;
+	}
+	
+	public int addFlight(Flight flight) {
+		int result=0;
+		try {
+			String query="insert into flight(flightNumber,departTime,arrivalTime,numberOfSeats,ticketPrice,date,departLocation,arrivalLocation) values(?,?,?,?,?,?,?,?);";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			st.setString(1, flight.getFlightNumber());
+			st.setString(2, flight.getDepartTime());
+			st.setString(3, flight.getArrivalTime());
+			st.setInt(4, flight.getNumberOfSeats());
+			st.setDouble(5, flight.getTicketPrice());
+			st.setString(6, flight.getDate());
+			st.setString(7, flight.getDepartLocation());
+			st.setString(8, flight.getArrivalLocation());
+			
+			result=st.executeUpdate();
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		return result;
+	}
