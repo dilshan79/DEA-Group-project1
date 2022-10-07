@@ -21,3 +21,38 @@ public class AddNewFlight extends HttpServlet {
         super();
         
     }
+    	
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Flight flight=new Flight();
+		Level_Two lv2=new Level_Two();
+		
+		if(request.getParameter("addFlight")!=null) {
+			flight.setDate(request.getParameter("date"));
+			flight.setArrivalTime(request.getParameter("arrivalTime"));
+			flight.setDepartTime(request.getParameter("departTime"));
+			flight.setFlightNumber(request.getParameter("flightNumber"));
+			flight.setNumberOfSeats(Integer.valueOf(request.getParameter("numberOfSeats")));
+			flight.setTicketPrice(Double.valueOf(request.getParameter("ticketPrice")));
+			flight.setDepartLocation(request.getParameter("departLocation"));
+			flight.setArrivalLocation(request.getParameter("arrivalLocation"));
+			
+			String role=request.getParameter("role");
+			
+			int result=lv2.addNewFlightDetails(flight);
+			
+			if(result>0) {
+				response.sendRedirect("staff_dashboard.jsp");
+				
+			}
+			else {
+				response.sendRedirect("add_new_flight.jsp");
+			}
+		}
+	}
+
+}
+
