@@ -37,3 +37,26 @@ public class Registration extends HttpServlet {
 			String address=request.getParameter("address");
 			String role=request.getParameter("role");
 			String dob=request.getParameter("dob");
+			if(role.equals("1")) {
+				StaffMember stm=new Level_One(name,dob,email,address,password,"Level 1");
+				result=um.addNewStaffMember(stm);
+			}
+			else if(role.equals("2")) {
+				StaffMember stm=new Level_Two(name,dob,email,address,password,"Level 2");
+				result=um.addNewStaffMember(stm);
+			}
+			else {
+				User user=new User(name,dob,email,address,password,"User");
+				result=um.addNewUser(user);
+			}
+			
+			if(result>0) {
+				response.sendRedirect("login.jsp");
+			}
+			else {
+				response.sendRedirect("registration.jsp");
+			}
+		}
+	}
+
+}
