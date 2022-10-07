@@ -27,3 +27,13 @@ public class Registration extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		UserManagement um=new UserManagement();
+		int result=0;
+		if(request.getParameter("user") != null) {
+			String name=request.getParameter("name");
+			String email=request.getParameter("email");
+			String password=request.getParameter("password");
+			String address=request.getParameter("address");
+			String role=request.getParameter("role");
+			String dob=request.getParameter("dob");
