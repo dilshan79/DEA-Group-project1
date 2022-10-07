@@ -112,3 +112,21 @@ public class TicketManagement {
 		
 		return result;
 	}
+	public int deleteTicket(Ticket ticket) {
+		int result=0;
+		try {
+			String query="delete from ticket_booking where id=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			
+			st.setInt(1, ticket.getId());
+	
+			result=st.executeUpdate();
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return result;
+	}
+}
