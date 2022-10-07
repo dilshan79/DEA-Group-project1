@@ -68,3 +68,33 @@ public class FlightManagement {
 		
 		return result;
 	}
+	public Flight getOneFlightDetails(Flight flight) {
+		
+		try {
+			String query="select * from flight where flightId=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			st.setInt(1, flight.getId());
+			ResultSet rs=st.executeQuery();
+			
+			if(rs.next()) {
+				flight.setId(rs.getInt("flightId"));
+				flight.setFlightNumber(rs.getString("flightNumber"));
+				flight.setDate(rs.getString("date"));
+				flight.setArrivalTime(rs.getString("arrivalTime"));
+				flight.setDepartTime(rs.getString("departTime"));
+				flight.setNumberOfSeats(rs.getInt("numberOfSeats"));
+				flight.setTicketPrice(rs.getDouble("ticketPrice"));
+				flight.setDepartLocation(rs.getString("departLocation"));
+				flight.setArrivalLocation(rs.getString("arrivalLocation"));
+				
+				
+			}
+		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		
+		
+		return flight;
+	}
