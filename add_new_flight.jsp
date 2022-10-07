@@ -22,7 +22,19 @@
 		         <input id="name" class="input-text js-input" type="text" name="flightNumber" required>
 		         <label class="label" for="name">Flight Number</label>
 		      </div>
-		      
+		      <div class="form-field col-lg-6 ">
+				<input id="email" class="input-text js-input" type="number" name="numberOfSeats" required>
+				<label class="label" for="email">Number Of Seats</label>
+			 </div>
+			 <div class="form-field col-lg-6 ">
+				<input id="company" class="input-text js-input" type="text" name="departLocation" required>
+				<label class="label" for="company">Depart Location</label>
+			 </div>
+			  <div class="form-field col-lg-6 ">
+				<input id="phone" class="input-text js-input" type="text" name="arrivalLocation" required>
+				<label class="label" for="phone">Arrival Location</label>
+			 
+			 </div>
 		      <div class="form-field col-lg-12">
 		         <input type="submit"class="submit-btn"  name="addFlight" value="Add Flight">
 		      </div>
