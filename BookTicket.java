@@ -24,3 +24,22 @@ public class BookTicket extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getParameter("generateTicket")!=null) {
+			Ticket ticket=new Ticket();
+			User user=new User();
+			
+			ticket.setEmail(request.getParameter("email"));
+			ticket.setNumberOfSeats(Integer.valueOf(request.getParameter("numberOfSeats")));
+			ticket.setFlightId(Integer.valueOf(request.getParameter("id")));
+			
+			int result=user.reserveTicket(ticket);
+			
+			if(result>0) {
+				response.sendRedirect("user_dashboard.jsp");
+			}
+		}
+	}
+
+}
+
