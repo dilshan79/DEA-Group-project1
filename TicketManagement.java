@@ -58,3 +58,31 @@ public class TicketManagement {
 				
 			}
 		}
+		catch(SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		return tickets;
+	}
+	
+	public Ticket getTicketDetails(Ticket ticket) {
+		try {
+			String query="select * from ticket_booking where id=?;";
+			PreparedStatement st=con.prepareStatement(query);
+			
+			
+			st.setInt(1, ticket.getId());
+			
+	
+			ResultSet rs=st.executeQuery();
+			
+			while(rs.next()) {
+				ticket.setEmail(rs.getString("email"));
+				ticket.setFlightId(rs.getInt("flightId"));
+				ticket.setId(rs.getInt("id"));
+				ticket.setNumberOfSeats(rs.getInt("numberOfSeats"));
+				ticket.setPaymentStatus(rs.getString("paymentStatus"));
+				
+				
+			}
+		}
