@@ -9,6 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+	StaffMember sm=new StaffMember();
+	sm.setId(Integer.valueOf(request.getParameter("id")));
+	
+	UserManagement um=new UserManagement();
+	
+	int result=um.activateStaffMember(sm);
+	
+	if(result>0){
+		response.sendRedirect("admin_dashboard.jsp");
+	}
+	
 
+%>
 </body>
 </html>
