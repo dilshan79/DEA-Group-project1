@@ -33,7 +33,23 @@
 			  <div class="form-field col-lg-6 ">
 				<input id="phone" class="input-text js-input" type="text" name="arrivalLocation" required>
 				<label class="label" for="phone">Arrival Location</label>
-			 
+			</div>
+			<div class="form-field col-lg-6 ">
+			   <input id="company" class="input-text js-input" type="time" name="departTime" required>
+			   <label class="label" for="company">Depart Time</label>
+			</div>
+			 <div class="form-field col-lg-6 ">
+			   <input id="phone" class="input-text js-input" type="time" name="arrivalTime" required>
+			   <label class="label" for="phone">Arrival Time</label>
+			</div>
+			<div class="form-field col-lg-6 ">
+			   <input id="company" class="input-text js-input" type="number" name="ticketPrice" required>
+			   <label class="label" for="company">Ticket Price</label>
+			</div>
+			 <div class="form-field col-lg-6 ">
+			   <input id="phone" class="input-text js-input" type="date" name="date" required>
+			   <label class="label" for="phone">Date</label>
+			   <input type="text" name="role" value="<%=session.getAttribute("role") %>" hidden>
 			 </div>
 		      <div class="form-field col-lg-12">
 		         <input type="submit"class="submit-btn"  name="addFlight" value="Add Flight">
