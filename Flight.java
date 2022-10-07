@@ -31,3 +31,12 @@ public class Flight {
 	public double getTicketPrice() {
 		return ticketPrice;
 	}
+	public void setTicketPrice(double ticketPrice) {
+		this.ticketPrice = ticketPrice;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
